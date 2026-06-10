@@ -1,0 +1,120 @@
+.more_movies {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.movie-header {
+	position: relative;
+	width: fit-content;
+	margin-left: 5%;
+	margin-top: 6%;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+}
+
+h2.movie-line {
+	color: red;
+	padding-bottom: 5px;
+	font-size: 30px;
+	font-weight: 1000;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h2.movie-category {
+	font-size: 30px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	cursor: pointer;
+}
+
+.movie-wrapper {
+	position: relative;
+	margin: 5%;
+	margin-top: 20px;
+	display: grid;
+	justify-items: center;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	height: 100%;
+	gap: 70px;
+}
+
+.movie-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.page {
+	position: relative;
+	display: flex;
+	justify-self: center;
+	align-items: center;
+	font-size: 20px;
+	gap: 30px;
+	bottom: 50px;
+}
+
+.page button {
+	background: none;
+	color: #808080;
+	border: none;
+	cursor: pointer;
+}
+
+.page button:hover {
+	color: #fff;
+}
+
+.page button.active-page {
+	color: red;
+}
+
+.page button:disabled {
+	color: #202020;
+	cursor: auto;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+	.movie-header {
+		margin-left: 3%;
+		margin-top: 50px;
+	}
+
+	.movie-wrapper {
+		margin: 3%;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 25px;
+	}
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+	.movie-header {
+		margin-left: 2%;
+		margin-bottom: 20px;
+		top: 20px;
+	}
+
+	h2.movie-category {
+		font-size: 20px;
+	}
+
+	.movie-wrapper {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+		margin: 2%;
+		margin-bottom: 40px;
+	}
+
+	.page {
+		gap: 12px;
+		font-size: 14px;
+		bottom: 20px;
+	}
+}

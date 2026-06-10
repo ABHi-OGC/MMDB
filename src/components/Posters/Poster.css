@@ -1,0 +1,298 @@
+.poster {
+	position: relative;
+	background: #000;
+	color: #fff;
+	margin: 0 40px;
+	margin-bottom: 50px;
+	padding: 0 10px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+h2.line {
+	color: red;
+	padding-bottom: 5px;
+	font-size: 30px;
+	font-weight: 1000;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h2 {
+	font-size: 25px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	cursor: pointer;
+}
+
+/* =========================
+   CARD WRAPPER
+========================= */
+
+.card-wrapper {
+	display: flex;
+	gap: 40px;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	padding-bottom: 15px;
+}
+
+.card-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+	position: relative;
+	flex: 0 0 auto;
+	width: 200px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.img-wrapper {
+	width: 100%;
+	aspect-ratio: 2 / 3;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #303030;
+}
+
+.list {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	right: 10px;
+	height: 40px;
+	width: 30px;
+	background: rgba(0, 0, 0, 0.6);
+	border: none;
+	border-radius: 0 0 5px 5px;
+	color: #aaa;
+	font-size: 20px;
+	z-index: 5;
+	transition: 0.2s ease;
+}
+
+.list:hover {
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+}
+
+.cardImg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.3s;
+}
+
+.card:hover .cardImg {
+	transform: scale(1.05);
+}
+
+.card:hover .title,
+.card:hover .length,
+.card:hover .year {
+	color: red;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	gap: 5px;
+	margin-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	overflow: hidden;
+}
+
+.title {
+	flex: 1;
+	min-width: 0;
+	max-width: 160px;
+	margin: 0;
+
+	font-size: 14px;
+	font-weight: 600;
+	font-family: Arial, Helvetica, sans-serif;
+
+	display: -webkit-box;
+	line-clamp: 2;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.year-length {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	flex-shrink: 0;
+	line-height: 2;
+}
+
+.length {
+	margin: 0;
+	font-size: 11px;
+	color: #aaa;
+	white-space: nowrap;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.year {
+	margin: 0;
+	font-size: 10px;
+	color: #aaa;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   SCROLL BUTTONS
+========================= */
+
+.scroll-l,
+.scroll-r {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 100px;
+	border-radius: 10px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 40px;
+	background: rgba(0, 0, 0, 0.5);
+
+	cursor: pointer;
+	user-select: none;
+
+	z-index: 2;
+	transition: 0.2s;
+}
+
+.scroll-l {
+	left: 0;
+}
+
+.scroll-r {
+	right: 0;
+}
+
+.scroll-l:hover,
+.scroll-r:hover {
+	background: rgba(0, 0, 0, 0.85);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+	.poster {
+		margin: 0 20px;
+	}
+
+	.card {
+		width: 120px;
+	}
+
+	.card-wrapper {
+		gap: 12px;
+	}
+
+	.scroll-l,
+	.scroll-r {
+		width: 40px;
+		height: 80px;
+		font-size: 28px;
+	}
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+	.poster {
+		margin: 0 8px;
+		margin-bottom: 10px;
+		padding: 0;
+	}
+
+	.header {
+		margin-bottom: 5px;
+	}
+
+	h2.line {
+		font-size: 20px;
+	}
+
+	h2 {
+		font-size: 16px;
+	}
+
+	.card-wrapper {
+		gap: 8px;
+		height: max-content;
+		scroll-snap-type: x proximity;
+		padding-bottom: 10px;
+	}
+
+	.card {
+		scroll-snap-align: start;
+		width: fit-content;
+	}
+
+	.list {
+		height: 30px;
+		width: 25px;
+	}
+
+	.img-wrapper {
+		max-height: 190px;
+		max-width: 120px;
+	}
+
+	.info {
+		margin-top: 4px;
+		gap: 5px;
+	}
+
+	.title {
+		max-width: 70px;
+		font-size: 9px;
+	}
+
+	.length {
+		font-size: 7px;
+		white-space: nowrap;
+	}
+
+	.year {
+		font-size: 7px;
+	}
+
+	.scroll-l,
+	.scroll-r {
+		display: none;
+	}
+}
