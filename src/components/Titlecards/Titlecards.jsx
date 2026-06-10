@@ -210,7 +210,7 @@ const Titlecards = () => {
 													isAdded ? "fa fa-bookmark" : "fa fa-bookmark-o"
 												}
 											/>{" "}
-											List
+											{isAdded ? "Added" : "List"}
 										</button>
 									</div>
 								</div>
