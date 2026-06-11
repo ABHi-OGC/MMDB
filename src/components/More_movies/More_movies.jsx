@@ -43,6 +43,38 @@ const More_movies = ({ category, url, type, query, movies }) => {
 	const totalPages = Math.ceil(activeMovies.length / moviesPerPage);
 
 	useEffect(() => {
+		const fetchRuntime = async () => {
+			if (!currentMovies.length) return;
+
+			try {
+				const details = await Promise.all(
+					currentMovies.map((movie) =>
+						axios.get(
+							`${type || movie.media_type}/${movie.id}?api_key=${API_KEY}`,
+						),
+					),
+				);
+
+				const runtimeMap = {};
+
+				details.forEach((res, index) => {
+					runtimeMap[currentMovies[index].id] =
+						res.data.runtime || res.data.number_of_seasons || null;
+				});
+
+				setLength((prev) => ({
+					...prev,
+					...runtimeMap,
+				}));
+			} catch (err) {
+				console.error(err);
+			}
+		};
+
+		fetchRuntime();
+	}, [currentMovies, type]);
+
+	useEffect(() => {
 		let isMounted = true;
 
 		const fetchMovies = async () => {
@@ -103,11 +135,6 @@ const More_movies = ({ category, url, type, query, movies }) => {
 				setMore_movies(uniqueMovies);
 
 				// no heavy runtime calls (prevents lag/flicker)
-				const runtimeMap = {};
-				uniqueMovies.forEach((m) => {
-					runtimeMap[m.id] = null;
-				});
-				setLength(runtimeMap);
 			} catch (err) {
 				console.error(err);
 			} finally {
