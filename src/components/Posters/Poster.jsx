@@ -203,8 +203,8 @@ const Poster = ({ category, url, type }) => {
 										<div className="year-length">
 											<h3 className="length">
 												{(type || movie.media_type) === "movie"
-													? `${length?.[movie.id] || "?"}m`
-													: `S • ${length?.[movie.id] || "?"}`}
+													? `${length?.[movie.id] || "N/A"}m`
+													: `S • ${length?.[movie.id] || "N/A"}`}
 											</h3>
 
 											<h3 className="year">

@@ -257,6 +257,7 @@ hr {
 	.play-details {
 		left: 10px;
 		top: 20px;
+		width: max-content;
 		padding: 0 15px;
 		box-sizing: border-box;
 	}
@@ -280,6 +281,7 @@ hr {
 	.play-overview {
 		font-size: 15px;
 		line-height: 1.5;
+		width: 100%;
 	}
 
 	.list-btn {
