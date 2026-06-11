@@ -284,12 +284,13 @@ h2 {
 	}
 
 	.length {
-		font-size: 10px;
+		font-size: 8px;
 		white-space: nowrap;
 	}
 
 	.year {
-		font-size: 10px;
+		font-size: 8px;
+		white-space: nowrap;
 	}
 
 	.scroll-l,
