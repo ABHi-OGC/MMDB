@@ -257,7 +257,7 @@ hr {
 	.play-details {
 		left: 10px;
 		top: 20px;
-		width: max-content;
+		width: 95%;
 		padding: 0 15px;
 		box-sizing: border-box;
 	}

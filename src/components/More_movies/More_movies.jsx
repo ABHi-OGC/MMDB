@@ -263,7 +263,7 @@ const More_movies = ({ category, url, type, query, movies }) => {
 											{!movies && (
 												<h3 className="length">
 													{(type || movie.media_type) === "movie"
-														? `${length?.[movie.id] || "N/A"}m`
+														? `${length?.[movie.id] || "N/A "}m`
 														: `S • ${length?.[movie.id] || "N/A"}`}
 												</h3>
 											)}
