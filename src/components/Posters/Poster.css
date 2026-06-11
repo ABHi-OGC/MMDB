@@ -260,6 +260,7 @@ h2 {
 	.card {
 		scroll-snap-align: start;
 		width: fit-content;
+		margin-bottom: 30px;
 	}
 
 	.list {
@@ -279,16 +280,16 @@ h2 {
 
 	.title {
 		max-width: 70px;
-		font-size: 9px;
+		font-size: 12px;
 	}
 
 	.length {
-		font-size: 7px;
+		font-size: 10px;
 		white-space: nowrap;
 	}
 
 	.year {
-		font-size: 7px;
+		font-size: 10px;
 	}
 
 	.scroll-l,
