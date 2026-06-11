@@ -108,16 +108,20 @@ const Play = () => {
 						{movie.vote_average?.toFixed(1)}
 					</span>
 
-					{type === "tv" && (
-						<h3 className="play-info">
-							{length} Seasons • {ep} Episodes
-						</h3>
+					{type === "tv" &&
+						((
+							<h3 className="play-info">
+								{length} Seasons • {ep} Episodes
+							</h3>
+						) ||
+							"N/A")}
+
+					{type === "movie" && (
+						<h3 className="play-info">{length ? `${length} mins` : "N/A"}</h3>
 					)}
 
-					{type === "movie" && <h3 className="play-info">{length} mins</h3>}
-
 					<h3 className="play-info">
-						{(movie.release_date || movie.first_air_date)?.slice(0, 4)}
+						{(movie.release_date || movie.first_air_date)?.slice(0, 4) || "N/A"}
 					</h3>
 				</div>
 
